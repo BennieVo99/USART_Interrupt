@@ -27,10 +27,6 @@
                           such as send  'CODER'
 **************************************************/
 
-
-#ifndef SERIALV2_H_
-#define SERIALV2_H_
-
 /*Initialize for USART*/
 static void USART_init(void)
 {
@@ -59,6 +55,3 @@ static void USART_putstring_P(const char *StringPtr, uint8_t usart_num)
     USART_send(pgm_read_byte(StringPtr++),usart_num);
   }
 }
-
-
-#endif /* SERIALV2_H_ */

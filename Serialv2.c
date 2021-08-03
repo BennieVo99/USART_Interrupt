@@ -5,7 +5,7 @@
 *
 * Module Description:
 * Module support to send data from PC to ATmega328P
-* by using the Polling method.
+* by using the Interrupt method.
 *
 ***************************************************/
 /*  Include section
@@ -19,7 +19,7 @@
 /*  Defines section
 * #define F_CPU 16000000UL
 * #define ENABLE_USART0 1
-* #define USART_INT_MODE 0 
+* #define USART_INT_MODE 1 
 * #define BAUDRATE 9600
 * #define BAUD_PRESCALER (((F_CPU / (BAUDRATE * 16UL))) - 1).
 *
@@ -83,6 +83,7 @@
    #endif
    /*Set frame format: 8data, 1 stop bit*/
    UCSR0C = 0x06;
+   sei();
  #endif
  }
 
